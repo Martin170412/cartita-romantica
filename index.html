@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para Mariana 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Courier New', cursive;
+      background: url('https://i.pinimg.com/originals/89/79/90/89799035b742efbf7e79a2f730b4c1d1.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      text-shadow: 1px 1px 2px black;
+      overflow-x: hidden;
+    }
+    #overlay {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    #open-btn {
+      padding: 20px 40px;
+      font-size: 20px;
+      border-radius: 10px;
+      border: none;
+      background: #ff5da2;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 15px #ff5da2;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    .card {
+      max-width: 800px;
+      margin: 100px auto;
+      padding: 30px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 20px;
+      box-shadow: 0 0 20px #fff3f3;
+      line-height: 1.6;
+      font-size: 18px;
+    }
+    .heart {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: fall 5s linear infinite;
+      opacity: 0.7;
+      border-radius: 50%;
+    }
+    .heart::before, .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+    .heart::before { top: -10px; left: 0; }
+    .heart::after { left: -10px; top: 0; }
+    @keyframes fall {
+      0% { top: -10%; }
+      100% { top: 110%; }
+    }
+    .final-image {
+      text-align: center;
+      margin-top: 50px;
+    }
+    .final-image img {
+      width: 300px;
+      border-radius: 20px;
+      border: 4px solid #fff;
+      box-shadow: 0 0 20px pink;
+    }
+    .final-text {
+      font-size: 24px;
+      margin-top: 15px;
+      color: #ffccf9;
+      animation: blink 1.5s infinite;
+    }
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0.4; }
+      100% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div id="overlay">
+    <button id="open-btn">💌 De Martin para el amor de mi vida 💌</button>
+  </div>
+
+  <div class="card" style="display: none;">
+    <p>Muchas gracias por existir y ser una persona tan única y maravillosa, te amo mucho Mariana, tú no imaginas todo lo que eres para mí, lo que significas en mi vida y lo mucho que agradezco por poder encontrarte a ti en este gran mundo, de tantas personas a las que conocer, pero aún así yo sé que ninguna de ellas es ni será un poco parecida a ti.</p>
+    <p>Tú eres tan única y yo amo que seas así niña, amo que seas tan inteligente, tan sensible, tan fuerte, tan comprensiva, tan valiente, tan expresiva. Amo que me hagas sentir acompañado siempre, así no estés conmigo. Amo tu forma de ser y de actuar, que seas tan detallista, tan educada, tan respetuosa, tan proyectada. Me haces sentir orgulloso de la persona que eres cada día, mi vida.</p>
+    <p>Quiero que lo sepas, que mientras yo tenga vida tú siempre tendrás a alguien dispuesto a escucharte, a acompañarte y comprenderte cuando nadie más lo haga, alguien que ame cada parte de tu ser y te lo haga saber siempre, porque mereces que te demuestren lo mucho que vales, así sea con los más mínimos detalles, siempre mi amor.</p>
+    <p>Tú eres muy valiosa y yo te lo haré saber siempre, te haré saber lo mucho que te amo por ser tú, que amo cada parte de ti y siempre será así. Mariana, yo a ti te amo con mi alma y siempre lo haré, te lo prometo, porque te amo amor de mi vida. 💖</p>
+
+    <div class="final-image">
+      <img src="baby.jpg" alt="Foto bebé" />
+      <div class="final-text">Te amo mi princesa 💗</div>
+    </div>
+  </div>
+
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2022/06/19/audio_a508ba7344.mp3" type="audio/mp3">
+    Tu navegador no soporta el audio.
+  </audio>
+
+  <script>
+    document.getElementById("open-btn").onclick = function () {
+      document.getElementById("overlay").style.display = "none";
+      document.querySelector(".card").style.display = "block";
+    };
+    for (let i = 0; i < 40; i++) {
+      let heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+      document.body.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
